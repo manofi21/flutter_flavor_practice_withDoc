@@ -60,6 +60,39 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    
+    // Setup flavor
+    flavorDimensions "app"
+    productFlavors {
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "AMS"
+            applicationIdSuffix ".salesmanagementactivity"
+            signingConfig signingConfigs.prod
+            // signingConfig signingConfigs.debug
+        }
+        training {
+            dimension "app"
+            resValue "string", "app_name", "AMS Training"
+            applicationIdSuffix ".amstraining"
+            signingConfig signingConfigs.prod
+            // signingConfig signingConfigs.debug
+        }
+        uat {
+            dimension "app"
+            resValue "string", "app_name", "AMS UAT"
+            applicationIdSuffix ".amsuat"
+            // signingConfig signingConfigs.prod
+            signingConfig signingConfigs.debug
+        }
+        demo {
+            dimension "app"
+            resValue "string", "app_name", "AMS UAT"
+            applicationIdSuffix ".amsuat"
+            // signingConfig signingConfigs.prod
+            signingConfig signingConfigs.debug
+        }
+   }
 }
 
 flutter {
